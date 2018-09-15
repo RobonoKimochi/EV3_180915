@@ -12,11 +12,22 @@ APPL_CXXOBJS += \
 	LineTracer.o \
     LineTracerWithStarter.o \
 	RotaryEnc.o \
+	Odmetry.o \
+	Mat.o \
+	BlueTooth.o \
+	UI.o \
+	Logger.o \
+	Filter.o \
+	Rotator.o \
+	Remote.o \
 	MeasureDistance.o \
 	LookUpGate.o \
 	AttitudeControl.o \
 	TailMotor.o \
-	Sound.o 
+	RunManager.o \
+    Garage.o \
+	Sound.o \
+	Run_Stairs.o
 
 SRCLANG := c++
 

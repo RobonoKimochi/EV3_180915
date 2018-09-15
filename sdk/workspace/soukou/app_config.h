@@ -24,7 +24,7 @@
 
 /* リモコン操作設定 */
 /* 0:リモコン操作なし	1:リモコン操作あり */
-#define USE_REMOTE_CONTROL_MODE	(0)
+#define USE_REMOTE_CONTROL_MODE	(1)
 
 
 /* ロガー設定 */
@@ -43,7 +43,7 @@
 
 
 /* FORWARD値設定 */
-#define CONSTANT_FORWARD_VAL	(100)
+#define CONSTANT_FORWARD_VAL	(60)
 
 /* FORWARD値設定 */
 #define SOUND_VOL				(4)

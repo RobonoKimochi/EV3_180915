@@ -13,11 +13,9 @@
 #include "BalancingWalker.h"
 #include "PidController.h"
 
-#include "MotorDriver.h"
-
-//#include "Odmetry.h"
-//#include "Rotator.h"
-//#include "RunManager.h"
+#include "Odmetry.h"
+#include "Rotator.h"
+#include "RunManager.h"
 #include "app_config.h"
 
 class LineTracer {
@@ -35,7 +33,7 @@ private:
     LineMonitor* mLineMonitor;
     BalancingWalker* mBalancingWalker;
     PidController* mPidController;
-//    Rotator* mRotator = new Rotator();
+    Rotator* mRotator = new Rotator();
     bool mIsInitialized;
     bool mIsFinished;
 	float percent;
@@ -44,9 +42,9 @@ private:
 
 	ev3api::Motor mRightWheel = MotorDriver::getInstance().getRightWheel();
     ev3api::Motor mLeftWheel = MotorDriver::getInstance().getLeftWheel();
-//    Odmetry *mOdmetry = Odmetry::getInstance();
-//    RunManager *mRunManager = RunManager::getInstance();
-//    RunManager::Section mSection;
+    Odmetry *mOdmetry = Odmetry::getInstance();
+    RunManager *mRunManager = RunManager::getInstance();
+    RunManager::Section mSection;
 
     void setPID(float kp, float ki, float kd);
 public:

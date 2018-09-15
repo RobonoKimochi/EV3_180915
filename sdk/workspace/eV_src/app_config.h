@@ -29,7 +29,7 @@
 
 /* ロガー設定 */
 /* 0:ログ出力なし	1:ログ出力あり */
-#define USE_OUTPUT_LOG		(1)
+#define USE_OUTPUT_LOG		(0)
 
 
 /* ライントレースON */
@@ -43,8 +43,7 @@
 
 
 /* FORWARD値設定 */
-//#define CONSTANT_FORWARD_VAL	(60)
-#define CONSTANT_FORWARD_VAL	(75)
+#define CONSTANT_FORWARD_VAL	(60)
 
 /* FORWARD値設定 */
 #define SOUND_VOL				(4)
