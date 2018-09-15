@@ -14,6 +14,8 @@
 
 ID _ev3api_id_EV3_CYC_TRACER;
 
+ID _ev3api_id_EV3_CYC_TAILMOTOR;
+
 void _initialize_ev3api_cyc() {
 	ER_ID ercd;
 	T_CCYC pk_ccyc;
@@ -26,4 +28,13 @@ void _initialize_ev3api_cyc() {
 	ercd = _ev3_acre_cyc(&pk_ccyc);
 	assert(ercd > 0);
 	_ev3api_id_EV3_CYC_TRACER = ercd;
+
+	pk_ccyc.cycatr = TA_NULL;
+	pk_ccyc.exinf = 3;
+	pk_ccyc.cychdr = ev3_cyc_tailmotor;
+	pk_ccyc.cyctim = 8;
+	pk_ccyc.cycphs = 1;
+	ercd = _ev3_acre_cyc(&pk_ccyc);
+	assert(ercd > 0);
+	_ev3api_id_EV3_CYC_TAILMOTOR = ercd;
 }

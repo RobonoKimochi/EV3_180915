@@ -8,3 +8,6 @@ extern ID _module_id_MAIN_TASK;
 extern ID _module_id_TRACER_TASK;
 #define TRACER_TASK ((const ID)(_module_id_TRACER_TASK))
 
+extern ID _module_id_TAILMOTOR_TASK;
+#define TAILMOTOR_TASK ((const ID)(_module_id_TAILMOTOR_TASK))
+

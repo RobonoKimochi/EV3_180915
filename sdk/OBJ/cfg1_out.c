@@ -1561,59 +1561,98 @@ const char TOPPERS_cfg_valueof_module_256[] = "ev3api_speaker.o"; /* #include "a
 #ifndef TOPPERS_cfg_valueof_TDOM_APP_DEFINED
 #define TOPPERS_cfg_valueof_TDOM_APP_DEFINED 1
 
-#line 5 "../workspace/etrobo_tr/app.cfg"
+#line 5 "../workspace/soukou/app.cfg"
 const unsigned_t TOPPERS_cfg_valueof_TDOM_APP = TDOM_APP;
 
 #endif
 #define TOPPERS_cfg_inside_of_TDOM_APP
 const unsigned_t TOPPERS_cfg_valueof_DOMAIN_257 = ( unsigned_t ) ( TDOM_APP );
-#line 6 "../workspace/etrobo_tr/app.cfg"
+#line 6 "../workspace/soukou/app.cfg"
 const unsigned_t TOPPERS_cfg_static_api_257 = 257;
 #define MAIN_TASK	(<>)
 
-#line 6 "../workspace/etrobo_tr/app.cfg"
+#line 6 "../workspace/soukou/app.cfg"
 const unsigned_t TOPPERS_cfg_valueof_tskatr_257 = ( unsigned_t )( TA_ACT ); const signed_t TOPPERS_cfg_valueof_itskpri_257 = ( signed_t )( MAIN_PRIORITY ); const unsigned_t TOPPERS_cfg_valueof_stksz_257 = ( unsigned_t )( STACK_SIZE ); const unsigned_t TOPPERS_cfg_valueof_DOMAIN_258 = ( unsigned_t ) ( TDOM_APP );
-#line 7 "../workspace/etrobo_tr/app.cfg"
+#line 7 "../workspace/soukou/app.cfg"
 const unsigned_t TOPPERS_cfg_static_api_258 = 258;
 #define TRACER_TASK	(<>)
 
-#line 7 "../workspace/etrobo_tr/app.cfg"
+#line 7 "../workspace/soukou/app.cfg"
 const unsigned_t TOPPERS_cfg_valueof_tskatr_258 = ( unsigned_t )( TA_NULL ); const signed_t TOPPERS_cfg_valueof_itskpri_258 = ( signed_t )( TRACER_PRIORITY ); const unsigned_t TOPPERS_cfg_valueof_stksz_258 = ( unsigned_t )( STACK_SIZE ); const unsigned_t TOPPERS_cfg_valueof_DOMAIN_259 = ( unsigned_t ) ( TDOM_APP );
-#line 9 "../workspace/etrobo_tr/app.cfg"
+#line 8 "../workspace/soukou/app.cfg"
 const unsigned_t TOPPERS_cfg_static_api_259 = 259;
+#define TAILMOTOR_TASK	(<>)
+
+#line 8 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_valueof_tskatr_259 = ( unsigned_t )( TA_NULL ); const signed_t TOPPERS_cfg_valueof_itskpri_259 = ( signed_t )( TAILMOTOR_PRIORITY ); const unsigned_t TOPPERS_cfg_valueof_stksz_259 = ( unsigned_t )( STACK_SIZE ); const unsigned_t TOPPERS_cfg_valueof_DOMAIN_260 = ( unsigned_t ) ( TDOM_APP );
+#line 10 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_260 = 260;
 #define EV3_CYC_TRACER	(<>)
 
-#line 9 "../workspace/etrobo_tr/app.cfg"
-const unsigned_t TOPPERS_cfg_valueof_cycatr_259 = ( unsigned_t )( TA_NULL ); const unsigned_t TOPPERS_cfg_valueof_cyctim_259 = ( unsigned_t )( 4 ); const unsigned_t TOPPERS_cfg_valueof_cycphs_259 = ( unsigned_t )( 1 ); 
+#line 10 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_valueof_cycatr_260 = ( unsigned_t )( TA_NULL ); const unsigned_t TOPPERS_cfg_valueof_cyctim_260 = ( unsigned_t )( 4 ); const unsigned_t TOPPERS_cfg_valueof_cycphs_260 = ( unsigned_t )( 1 ); const unsigned_t TOPPERS_cfg_valueof_DOMAIN_261 = ( unsigned_t ) ( TDOM_APP );
+#line 11 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_261 = 261;
+#define EV3_CYC_TAILMOTOR	(<>)
+
+#line 11 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_valueof_cycatr_261 = ( unsigned_t )( TA_NULL ); const unsigned_t TOPPERS_cfg_valueof_cyctim_261 = ( unsigned_t )( 8 ); const unsigned_t TOPPERS_cfg_valueof_cycphs_261 = ( unsigned_t )( 1 ); 
 #ifndef TOPPERS_cfg_inside_of_TDOM_APP
 
-#line 10 "../workspace/etrobo_tr/app.cfg"
+#line 12 "../workspace/soukou/app.cfg"
 #error syntax error
 #endif
 #undef TOPPERS_cfg_inside_of_TDOM_APP
 
 
-#line 12 "../workspace/etrobo_tr/app.cfg"
-const unsigned_t TOPPERS_cfg_static_api_260 = 260;
-const char TOPPERS_cfg_valueof_module_260[] = "app.o"; 
-#line 13 "../workspace/etrobo_tr/app.cfg"
-const unsigned_t TOPPERS_cfg_static_api_261 = 261;
-const char TOPPERS_cfg_valueof_module_261[] = "balancer.o"; 
-#line 14 "../workspace/etrobo_tr/app.cfg"
+#line 14 "../workspace/soukou/app.cfg"
 const unsigned_t TOPPERS_cfg_static_api_262 = 262;
-const char TOPPERS_cfg_valueof_module_262[] = "balancer_param.o"; 
-#line 16 "../workspace/etrobo_tr/app.cfg"
+const char TOPPERS_cfg_valueof_module_262[] = "app.o"; 
+#line 15 "../workspace/soukou/app.cfg"
 const unsigned_t TOPPERS_cfg_static_api_263 = 263;
-const char TOPPERS_cfg_valueof_module_263[] = "LineTracer.o"; 
-#line 17 "../workspace/etrobo_tr/app.cfg"
+const char TOPPERS_cfg_valueof_module_263[] = "balancer.o"; 
+#line 16 "../workspace/soukou/app.cfg"
 const unsigned_t TOPPERS_cfg_static_api_264 = 264;
-const char TOPPERS_cfg_valueof_module_264[] = "BalancingWalker.o"; 
-#line 18 "../workspace/etrobo_tr/app.cfg"
+const char TOPPERS_cfg_valueof_module_264[] = "balancer_param.o"; 
+#line 18 "../workspace/soukou/app.cfg"
 const unsigned_t TOPPERS_cfg_static_api_265 = 265;
-const char TOPPERS_cfg_valueof_module_265[] = "BalancerCpp.o"; 
-#line 19 "../workspace/etrobo_tr/app.cfg"
+const char TOPPERS_cfg_valueof_module_265[] = "LineTracer.o"; 
+#line 19 "../workspace/soukou/app.cfg"
 const unsigned_t TOPPERS_cfg_static_api_266 = 266;
-const char TOPPERS_cfg_valueof_module_266[] = "LineMonitor.o"; 
+const char TOPPERS_cfg_valueof_module_266[] = "LineTracerWithStarter.o"; 
+#line 20 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_267 = 267;
+const char TOPPERS_cfg_valueof_module_267[] = "BalancingWalker.o"; 
+#line 21 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_268 = 268;
+const char TOPPERS_cfg_valueof_module_268[] = "BalancerCpp.o"; 
+#line 22 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_269 = 269;
+const char TOPPERS_cfg_valueof_module_269[] = "LineMonitor.o"; 
+#line 23 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_270 = 270;
+const char TOPPERS_cfg_valueof_module_270[] = "Starter.o"; 
+#line 24 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_271 = 271;
+const char TOPPERS_cfg_valueof_module_271[] = "Calibration.o"; 
+#line 25 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_272 = 272;
+const char TOPPERS_cfg_valueof_module_272[] = "PidController.o"; 
+#line 27 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_273 = 273;
+const char TOPPERS_cfg_valueof_module_273[] = "MeasureDistance.o"; 
+#line 28 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_274 = 274;
+const char TOPPERS_cfg_valueof_module_274[] = "LookUpGate.o"; 
+#line 29 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_275 = 275;
+const char TOPPERS_cfg_valueof_module_275[] = "AttitudeControl.o"; 
+#line 30 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_276 = 276;
+const char TOPPERS_cfg_valueof_module_276[] = "TailMotor.o"; 
+#line 31 "../workspace/soukou/app.cfg"
+const unsigned_t TOPPERS_cfg_static_api_277 = 277;
+const char TOPPERS_cfg_valueof_module_277[] = "Garage.o"; 
 #ifdef TOPPERS_cfg_inside_of_TDOM_KERNEL
 #error missing '}'
 #endif
