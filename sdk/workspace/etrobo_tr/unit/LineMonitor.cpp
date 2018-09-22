@@ -9,7 +9,9 @@
 #include "LineMonitor.h"
 
 // 定数宣言
-const int8_t LineMonitor::INITIAL_THRESHOLD = 20;  // 黒色の光センサ値
+//const int8_t LineMonitor::INITIAL_THRESHOLD = 20;  // 黒色の光センサ値
+int8_t LineMonitor::INITIAL_THRESHOLD = 20;  // 黒色の光センサ値
+
 
 /**
  * コンストラクタ
@@ -36,6 +38,17 @@ bool LineMonitor::isOnLine() const {
     }
 }
 
+bool LineMonitor::isOnLine2() const {
+    // 光センサからの取得値を見て
+    // 黒以上であれば「true」を、
+    // そうでなければ「false」を返す
+    if (mColorSensor.getBrightness() >= 30) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 /**
  * ライン閾値を設定する
  * @param threshold ライン閾値
@@ -43,3 +56,4 @@ bool LineMonitor::isOnLine() const {
 void LineMonitor::setThreshold(int8_t threshold) {
     mThreshold = threshold;
 }
+

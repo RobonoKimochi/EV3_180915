@@ -23,6 +23,7 @@ private:
     const LineMonitor* mLineMonitor;
     BalancingWalker* mBalancingWalker;
     bool mIsInitialized;
+    
 
     int calcDirection(bool isOnLine);
 };

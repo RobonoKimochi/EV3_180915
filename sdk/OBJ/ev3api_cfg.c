@@ -14,6 +14,7 @@
 
 ID _ev3api_id_EV3_CYC_TRACER;
 
+<<<<<<< HEAD
 ID _ev3api_id_EV3_CYC_ODMETRY;
 
 ID _ev3api_id_EV3_CYC_TAILMOTOR;
@@ -22,6 +23,8 @@ ID _ev3api_id_EV3_CYC_LOGGER;
 
 ID _ev3api_id_EV3_CYC_REMOTE;
 
+=======
+>>>>>>> parent of a0735ed... 訂正
 void _initialize_ev3api_cyc() {
 	ER_ID ercd;
 	T_CCYC pk_ccyc;
@@ -34,6 +37,7 @@ void _initialize_ev3api_cyc() {
 	ercd = _ev3_acre_cyc(&pk_ccyc);
 	assert(ercd > 0);
 	_ev3api_id_EV3_CYC_TRACER = ercd;
+<<<<<<< HEAD
 
 	pk_ccyc.cycatr = TA_NULL;
 	pk_ccyc.exinf = 2;
@@ -70,4 +74,6 @@ void _initialize_ev3api_cyc() {
 	ercd = _ev3_acre_cyc(&pk_ccyc);
 	assert(ercd > 0);
 	_ev3api_id_EV3_CYC_REMOTE = ercd;
+=======
+>>>>>>> parent of a0735ed... 訂正
 }

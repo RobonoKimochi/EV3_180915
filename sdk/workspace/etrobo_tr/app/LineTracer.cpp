@@ -8,6 +8,9 @@
 
 #include "LineTracer.h"
 
+int g_count;
+char g_state;
+
 /**
  * コンストラクタ
  * @param lineMonitor     ライン判定
@@ -17,7 +20,9 @@ LineTracer::LineTracer(const LineMonitor* lineMonitor,
                        BalancingWalker* balancingWalker)
     : mLineMonitor(lineMonitor),
       mBalancingWalker(balancingWalker),
-      mIsInitialized(false) {
+      mIsInitialized(false) 
+      {
+		
 }
 
 /**
@@ -29,8 +34,9 @@ void LineTracer::run() {
         mIsInitialized = true;
     }
 
-    bool isOnLine = mLineMonitor->isOnLine();
-
+    bool isOnLine = mLineMonitor->isOnLine(); 
+    
+    
     // 走行体の向きを計算する
     int direction = calcDirection(isOnLine);
 
@@ -49,7 +55,8 @@ void LineTracer::run() {
 int LineTracer::calcDirection(bool isOnLine) {
     if (isOnLine) {
         // ライン上にある場合
-        return BalancingWalker::LOW;
+//        return BalancingWalker::LOW;
+        return BalancingWalker::HIGH;
     } else {
         // ライン外にある場合
         return -BalancingWalker::LOW;

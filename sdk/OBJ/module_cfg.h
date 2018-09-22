@@ -8,6 +8,7 @@ extern ID _module_id_MAIN_TASK;
 extern ID _module_id_TRACER_TASK;
 #define TRACER_TASK ((const ID)(_module_id_TRACER_TASK))
 
+<<<<<<< HEAD
 extern ID _module_id_ODMETRY_TASK;
 #define ODMETRY_TASK ((const ID)(_module_id_ODMETRY_TASK))
 
@@ -23,3 +24,5 @@ extern ID _module_id_REMOTE_TASK;
 extern ID _module_id_UI_TASK;
 #define UI_TASK ((const ID)(_module_id_UI_TASK))
 
+=======
+>>>>>>> parent of a0735ed... 訂正
