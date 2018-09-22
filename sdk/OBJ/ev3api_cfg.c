@@ -15,6 +15,7 @@
 ID _ev3api_id_EV3_CYC_TRACER;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ID _ev3api_id_EV3_CYC_ODMETRY;
 
 ID _ev3api_id_EV3_CYC_TAILMOTOR;
@@ -25,6 +26,10 @@ ID _ev3api_id_EV3_CYC_REMOTE;
 
 =======
 >>>>>>> parent of a0735ed... 訂正
+=======
+ID _ev3api_id_EV3_CYC_TAILMOTOR;
+
+>>>>>>> parent of 4bca7fb... 定周期走行、オドメトリとか本来のクラスを一通り統合した
 void _initialize_ev3api_cyc() {
 	ER_ID ercd;
 	T_CCYC pk_ccyc;
@@ -40,22 +45,14 @@ void _initialize_ev3api_cyc() {
 <<<<<<< HEAD
 
 	pk_ccyc.cycatr = TA_NULL;
-	pk_ccyc.exinf = 2;
-	pk_ccyc.cychdr = ev3_cyc_odmetry;
-	pk_ccyc.cyctim = 4;
-	pk_ccyc.cycphs = 1;
-	ercd = _ev3_acre_cyc(&pk_ccyc);
-	assert(ercd > 0);
-	_ev3api_id_EV3_CYC_ODMETRY = ercd;
-
-	pk_ccyc.cycatr = TA_NULL;
 	pk_ccyc.exinf = 3;
 	pk_ccyc.cychdr = ev3_cyc_tailmotor;
-	pk_ccyc.cyctim = 4;
+	pk_ccyc.cyctim = 8;
 	pk_ccyc.cycphs = 1;
 	ercd = _ev3_acre_cyc(&pk_ccyc);
 	assert(ercd > 0);
 	_ev3api_id_EV3_CYC_TAILMOTOR = ercd;
+<<<<<<< HEAD
 
 	pk_ccyc.cycatr = TA_NULL;
 	pk_ccyc.exinf = 0;
@@ -76,4 +73,6 @@ void _initialize_ev3api_cyc() {
 	_ev3api_id_EV3_CYC_REMOTE = ercd;
 =======
 >>>>>>> parent of a0735ed... 訂正
+=======
+>>>>>>> parent of 4bca7fb... 定周期走行、オドメトリとか本来のクラスを一通り統合した
 }

@@ -16,6 +16,7 @@ extern "C" {
  *  各タスクの優先度の定義
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 // #define TMIN_TPRI        1            /* タスク優先度の最小値（最高値） */
 // #define TMIN_APP_TPRI        (TMIN_TPRI + 8)
 #define MAIN_PRIORITY       TMIN_APP_TPRI + 1      /* mainタスクの優先度       (10) */
@@ -29,6 +30,11 @@ extern "C" {
 #define MAIN_PRIORITY    TMIN_APP_TPRI + 1  /* メインタスクの優先度 */
 #define TRACER_PRIORITY  TMIN_APP_TPRI + 2
 >>>>>>> parent of a0735ed... 訂正
+=======
+#define MAIN_PRIORITY    TMIN_APP_TPRI + 1  /* メインタスクの優先度 */
+#define TRACER_PRIORITY  TMIN_APP_TPRI + 2
+#define TAILMOTOR_PRIORITY  TMIN_APP_TPRI + 4      /* TailMotorタスクの優先度  (14) */
+>>>>>>> parent of 4bca7fb... 定周期走行、オドメトリとか本来のクラスを一通り統合した
 
 /*
  *  ターゲットに依存する可能性のある定数の定義
@@ -48,6 +54,7 @@ extern void ev3_cyc_tracer(intptr_t exinf);
 <<<<<<< HEAD
 extern void tailmotor_task(intptr_t exinf);
 extern void ev3_cyc_tailmotor(intptr_t exinf);
+<<<<<<< HEAD
 extern void odmetry_task(intptr_t exinf);
 extern void ev3_cyc_odmetry(intptr_t exinf);
 extern void ui_task(intptr_t exinf);
@@ -58,6 +65,8 @@ extern void remote_task(intptr_t exinf);
 extern void ev3_cyc_remote(intptr_t exinf);
 =======
 >>>>>>> parent of a0735ed... 訂正
+=======
+>>>>>>> parent of 4bca7fb... 定周期走行、オドメトリとか本来のクラスを一通り統合した
 
 #endif /* TOPPERS_MACRO_ONLY */
 

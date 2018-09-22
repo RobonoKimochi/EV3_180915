@@ -146,7 +146,7 @@ void main_task(intptr_t unused) {
 	act_tsk(TRACER_TASK);
 
     // 周期ハンドラ開始
-    ev3_sta_cyc(EV3_CYC_TRACER);
+//    ev3_sta_cyc(EV3_CYC_TRACER);
 	ev3_sta_cyc(EV3_CYC_ODMETRY);
 	ev3_sta_cyc(EV3_CYC_TAILMOTOR);
 
@@ -157,7 +157,7 @@ void main_task(intptr_t unused) {
     slp_tsk();  // バックボタンが押されるまで待つ
 
     // 周期ハンドラ停止
-     ev3_stp_cyc(EV3_CYC_TRACER);
+    // ev3_stp_cyc(EV3_CYC_TRACER);
 	ter_tsk(TRACER_TASK);
 
     user_system_destroy();  // 終了処理
@@ -167,10 +167,9 @@ void main_task(intptr_t unused) {
 /**
  * ライントレース周期タスク
  */
- void ev3_cyc_tracer(intptr_t exinf) {
-     act_tsk(TRACER_TASK);
- }
-
+// void ev3_cyc_tracer(intptr_t exinf) {
+//     act_tsk(TRACER_TASK);
+// }
 /**
  * ライントレースタスク
  */
@@ -181,8 +180,9 @@ void tracer_task(intptr_t exinf) {
 	    } else {
 	        gLineTracerWithStarter->run();  // (倒立)走行
 	    }
+		tslp_tsk(4);
 	}
-     ext_tsk();
+//     ext_tsk();
 }
 /**
  * テールモータ周期タスク

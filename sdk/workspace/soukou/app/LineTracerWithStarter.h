@@ -12,12 +12,15 @@
 #include "Starter.h"
 #include "LineTracer.h"
 #include "Calibration.h"
-#include "Remote.h"
+
+#include "TailMotor.h"
+
+//#include "Remote.h"
 #include "MeasureDistance.h"
 #include "LookUpGate.h"
-#include "Garage.h"
+//#include "Garage.h"
 #include "BalancingWalker.h"
-#include "Run_Stairs.h"
+//#include "Run_Stairs.h"
 #include "Sound.h"
 
 class LineTracerWithStarter {
@@ -25,12 +28,12 @@ public:
     LineTracerWithStarter(LineTracer* lineTracer,
                const Starter* starter,
                Calibration* calibration,
-               Remote*		   Remote,
+//               Remote*		   Remote,
                LookUpGate*     LookUpGate,
                MeasureDistance *measureDistance,
-               Garage*         garage,
-               BalancingWalker* balancingWalker,
-               Run_Stairs*      run_Stairs
+//               Garage*         garage,
+               BalancingWalker* balancingWalker
+//               Run_Stairs*      run_Stairs
                );
     virtual ~LineTracerWithStarter();
 
@@ -59,12 +62,12 @@ private:
     LineTracer* mLineTracer;
     const Starter* mStarter;
     Calibration* mCalibration;
-	Remote* mRemote;
+//	Remote* mRemote;
 	LookUpGate* mLookUpGate;// = new LookUpGate();
 	MeasureDistance* mMeasureDistance;// = new MeasureDistance();
-	Garage* mGarage;
+//	Garage* mGarage;
     BalancingWalker* mBalancingWalker;
-    Run_Stairs* mRun_Stairs;
+//    Run_Stairs* mRun_Stairs;
     Sound *mSound = Sound::getInstance();
 public:
     State mState;

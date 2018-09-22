@@ -17,15 +17,9 @@ extern "C" {
 /*
  *  各タスクの優先度の定義
  */
-// #define TMIN_TPRI        1            /* タスク優先度の最小値（最高値） */
-// #define TMIN_APP_TPRI        (TMIN_TPRI + 8)
-#define MAIN_PRIORITY       TMIN_APP_TPRI + 1      /* mainタスクの優先度       (10) */
-#define TRACER_PRIORITY     TMIN_APP_TPRI + 2      /* Tracerタスクの優先度     (12) */
-#define ODMETRY_PRIORITY    TMIN_APP_TPRI + 3      /* Odmetryタスクの優先度    (13) */
+#define MAIN_PRIORITY    TMIN_APP_TPRI + 1  /* メインタスクの優先度 */
+#define TRACER_PRIORITY  TMIN_APP_TPRI + 2
 #define TAILMOTOR_PRIORITY  TMIN_APP_TPRI + 4      /* TailMotorタスクの優先度  (14) */
-#define LOGGER_PRIORITY     TMIN_APP_TPRI + 5      /* Loggerタスクの優先度     (15) */
-#define REMOTE_PRIORITY     TMIN_APP_TPRI + 6      /* Remoteタスクの優先度     (15) */
-#define UI_PRIORITY         TMIN_APP_TPRI + 6      /* UIタスクの優先度         (16) */
 
 #define ABS(v)  ((v) < 0 ? -(v) : (v))
 /*
@@ -45,14 +39,6 @@ extern void tracer_task(intptr_t exinf);
 extern void ev3_cyc_tracer(intptr_t exinf);
 extern void tailmotor_task(intptr_t exinf);
 extern void ev3_cyc_tailmotor(intptr_t exinf);
-extern void odmetry_task(intptr_t exinf);
-extern void ev3_cyc_odmetry(intptr_t exinf);
-extern void ui_task(intptr_t exinf);
-extern void ev3_cyc_ui(intptr_t exinf);
-extern void logger_task(intptr_t exinf);
-extern void ev3_cyc_logger(intptr_t exinf);
-extern void remote_task(intptr_t exinf);
-extern void ev3_cyc_remote(intptr_t exinf);
 
 #endif /* TOPPERS_MACRO_ONLY */
 

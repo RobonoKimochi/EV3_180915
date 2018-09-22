@@ -19,24 +19,24 @@
  LineTracerWithStarter::LineTracerWithStarter(LineTracer* lineTracer,
                                               const Starter* starter,
                                               Calibration* calibration,
- 											 Remote*     Remote,
- 											 LookUpGate*     LookUpGate,
+// 											 Remote*     Remote,
+											 LookUpGate*     LookUpGate,
  											 MeasureDistance *measureDistance,
- 											 Garage*         Garage,
-                                              BalancingWalker* balancingWalker,
-                                              Run_Stairs*       run_Stairs
+// 											 Garage*         Garage,
+                                              BalancingWalker* balancingWalker
+//                                              Run_Stairs*       run_Stairs
  											 )
     : TailInit(false),
       LookUpCompFlag(false),
       mLineTracer(lineTracer),
       mStarter(starter),
       mCalibration(calibration),
-      mRemote(Remote),
+//      mRemote(Remote),
       mLookUpGate(LookUpGate),
       mMeasureDistance(measureDistance),
-      mGarage(Garage),
+//      mGarage(Garage),
       mBalancingWalker(balancingWalker),
-      mRun_Stairs(run_Stairs),
+//      mRun_Stairs(run_Stairs),
       mState(UNDEFINED),
       TimeCount(0),
       mStartSignal(false)
@@ -77,7 +77,7 @@ void LineTracerWithStarter::run() {
         execWalking();
         break;
     case REMOTE:
-    	remote();
+//    	remote();
     	break;
     case LOOKUPGATE:
     	execLookUpGate();
@@ -86,7 +86,7 @@ void LineTracerWithStarter::run() {
         execGrayDetect();
         break;
     case STAIRS:
-        execStairs() ;
+//        execStairs() ;
         break;
     case GARAGE:
     	execGarage();
@@ -215,36 +215,40 @@ void LineTracerWithStarter::execWaitingForStart() {
  * 走行中状態の処理
  */
 void LineTracerWithStarter::execWalking() {
-	if(mRemote->RemoteState() == true) {
-		mState = REMOTE;
-	} else {
+//	if(mRemote->RemoteState() == true) {
+//		mState = REMOTE;
+//	} else {
         mLineTracer->run();
 #if RUN_COURSE == RUN_RIGHT_COURSE
         if( mLineTracer->isFinished() == true){
 
             mState = STAIRS;
 #elif RUN_COURSE == RUN_LEFT_COURSE
-        if( mLineTracer->isFinished() == true && mMeasureDistance->DetectGate() == true){
+        if( (mLineTracer->isFinished() == true) && (mMeasureDistance->DetectGate() == true ))
+        {
             mState = LOOKUPGATE;
 #endif
 		}
-	}
+//	}
 }
+
 
 /**
  * ルックアップゲート状態の処理
  */
 void LineTracerWithStarter::execLookUpGate() {
-	if(mRemote->RemoteState() == true) {
-		mState = REMOTE;
-	} else {
+//	if(mRemote->RemoteState() == true) {
+//		mState = REMOTE;
+//	} else {
 		LookUpCompFlag =mLookUpGate->RunLookUpGate();
 		if(LookUpCompFlag == true) {
-			// mState = GARAGE;
+//			 mState = GARAGE;
             mState = GRAY_DETECT;
 		}
-	}
+//	}
 }
+
+#if 0
 /**
  * 階段制御の処理
  */
@@ -258,30 +262,35 @@ void LineTracerWithStarter::execStairs()
 		// mState = WALKING ; // 要検討
 	}
 }
+#endif
+
 /**
  * 車庫入れ状態の処理
  */
 void LineTracerWithStarter::execGarage() {
 	ev3_led_set_color(LED_ORANGE);
-	if(mRemote->RemoteState() == true) {
-		mState = REMOTE;
-	} else {
-		mGarage->StateGarage();
-	}
+//	if(mRemote->RemoteState() == true) {
+//		mState = REMOTE;
+//	} else {
+//		mGarage->StateGarage();
+//	}
 }
 /**
  * 灰色検知してガレージに渡す処理
  */
 void LineTracerWithStarter::execGrayDetect() {
 	ev3_led_set_color(LED_OFF);
-	if(mRemote->RemoteState() == true) {
-		mState = REMOTE;
-	} else {
+//	if(mRemote->RemoteState() == true) {
+//		mState = REMOTE;
+//	} else {
 		if( mLineTracer->detectGray() == true){
             mState = GARAGE;
         }
-	}
-}/**
+//	}
+}
+
+#if 0
+/**
  * リモート中の処理
  */
 void LineTracerWithStarter::remote() {
@@ -292,3 +301,6 @@ void LineTracerWithStarter::remote() {
 		mRemote->RemoteControl();
 	}
 }
+#endif
+
+

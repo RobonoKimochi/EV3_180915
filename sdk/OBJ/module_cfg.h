@@ -9,6 +9,7 @@ extern ID _module_id_TRACER_TASK;
 #define TRACER_TASK ((const ID)(_module_id_TRACER_TASK))
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 extern ID _module_id_ODMETRY_TASK;
 #define ODMETRY_TASK ((const ID)(_module_id_ODMETRY_TASK))
 
@@ -26,3 +27,8 @@ extern ID _module_id_UI_TASK;
 
 =======
 >>>>>>> parent of a0735ed... 訂正
+=======
+extern ID _module_id_TAILMOTOR_TASK;
+#define TAILMOTOR_TASK ((const ID)(_module_id_TAILMOTOR_TASK))
+
+>>>>>>> parent of 4bca7fb... 定周期走行、オドメトリとか本来のクラスを一通り統合した

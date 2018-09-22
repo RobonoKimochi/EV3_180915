@@ -10,19 +10,11 @@
 #include "LineTracer.h"
 <<<<<<< HEAD
 #include "LineTracerWithStarter.h"
-// added part
-#include "Odmetry.h"
-#include "UI.h"
-// #include "BlueTooth.h"
-#include "Logger.h"
 
 #include "MotorDriver.h"
 #include "SensorDriver.h"
 
-#include "Remote.h"
-#include "AttitudeControl.h"
-#include "MeasureDistance.h"
-#include "RunManager.h"
+
 #include "TailMotor.h"
 #include "BalancingWalker.h"
 #include "Sound.h"
@@ -58,17 +50,13 @@ static Calibration		*gCalibration;
 static PidController	*gPidController;
 static LineTracerWithStarter *gLineTracerWithStarter;
 static MeasureDistance	*gMeasureDistance;
-static UI				*gUI;
-static Logger			*gLogger;
 static TailMotor		*gTailMotor;// = TailMotor::getInstance();
-static RunManager		*gRunManager;
-static Garage			*gGarage;
-static Remote			*gRemote;
+
+//static Garage			*gGarage;
 static AttitudeControl	*gAttitudeControl;
 static LookUpGate		*gLookUpGate;
-static Odmetry			*gOdmetry;
 static Sound 			*gSound;
-static Run_Stairs		*gRun_Stairs ;
+
 static Clock			*gClock;
 =======
 >>>>>>> parent of a0735ed... 訂正
@@ -92,14 +80,14 @@ static void user_system_create() {
 	gLookUpGate      = new LookUpGate(gAttitudeControl,gBalancingWalker,gMeasureDistance, gPidController, gLineMonitor);
     gLineTracer      = new LineTracer(gLineMonitor, gBalancingWalker, gPidController);
     gCalibration     = new Calibration(gColorSensor, gGyroSensor, gLineMonitor);
-	gRemote          = new Remote(gBalancingWalker);
-	gGarage          = new Garage(gBalancingWalker, gLineTracer, gPidController, gLineMonitor);
-	gRun_Stairs		 = new Run_Stairs( gBalancingWalker, gPidController, gLineMonitor);
-    gLineTracerWithStarter = new LineTracerWithStarter(gLineTracer, gStarter, gCalibration, gRemote, gLookUpGate , gMeasureDistance, gGarage, gBalancingWalker, gRun_Stairs);
-    gUI             = new UI();
-    gLogger         = new Logger();
-	gOdmetry		= Odmetry::getInstance();
-	gRunManager		= RunManager::getInstance();
+//	gGarage          = new Garage(gBalancingWalker, gLineTracer, gPidController, gLineMonitor);
+    gLineTracerWithStarter = new LineTracerWithStarter(gLineTracer, gStarter, 
+    gCalibration, 
+//    gRemote, 
+	gLookUpGate , gMeasureDistance, 
+//	gGarage, 
+	gBalancingWalker);
+//, gRun_Stairs);
 	gTailMotor		= TailMotor::getInstance();
 	gSound 			= Sound::getInstance();
 	gClock			 = new Clock();
@@ -125,8 +113,6 @@ static void user_system_destroy() {
 <<<<<<< HEAD
     delete gCalibration;
     delete gPidController;
-    delete gUI;
-    delete gLogger;
 
 /* 追加 */
     gGyroSensor.reset();
@@ -134,11 +120,11 @@ static void user_system_destroy() {
     delete gAttitudeControl;
     delete gMeasureDistance;
     delete gLookUpGate;
-    delete gRemote;
-    delete gGarage;
-    delete gRun_Stairs;
-    delete gOdmetry;
-    delete gRunManager;
+//    delete gRemote;
+//    delete gGarage;
+//    delete gRun_Stairs;
+//    delete gOdmetry;
+//    delete gRunManager;
     delete gTailMotor;
 	delete gSound;
 	delete gClock;
@@ -162,14 +148,13 @@ void main_task(intptr_t unused) {
     // 周期ハンドラ開始
     ev3_sta_cyc(EV3_CYC_TRACER);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ev3_sta_cyc(EV3_CYC_ODMETRY);
+=======
+>>>>>>> parent of 4bca7fb... 定周期走行、オドメトリとか本来のクラスを一通り統合した
 	ev3_sta_cyc(EV3_CYC_TAILMOTOR);
 =======
 >>>>>>> parent of a0735ed... 訂正
-
-	// UIタスク開始
-	act_tsk(UI_TASK);
-
 
     slp_tsk();  // バックボタンが押されるまで待つ
 
@@ -209,6 +194,7 @@ void tailmotor_task(intptr_t exinf) {
 	}
 	ext_tsk();
 }
+<<<<<<< HEAD
 /**
  * オドメトリ周期タスク
  */
@@ -358,3 +344,5 @@ void ui_task(intptr_t exinf){
 }
 =======
 >>>>>>> parent of a0735ed... 訂正
+=======
+>>>>>>> parent of 4bca7fb... 定周期走行、オドメトリとか本来のクラスを一通り統合した

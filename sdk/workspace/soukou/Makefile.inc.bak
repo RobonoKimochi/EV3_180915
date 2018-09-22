@@ -12,9 +12,6 @@ APPL_CXXOBJS += \
 	LineTracer.o \
     LineTracerWithStarter.o \
 	RotaryEnc.o \
-	MeasureDistance.o \
-	LookUpGate.o \
-	AttitudeControl.o \
 	TailMotor.o \
 	Sound.o 
 

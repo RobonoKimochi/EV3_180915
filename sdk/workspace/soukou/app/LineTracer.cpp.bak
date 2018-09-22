@@ -60,8 +60,7 @@ void LineTracer::run() {
      	}
     	//direction = 0;
 #if USE_DEBUG_MODE
-//    mPidController->setPID(1.0, 0, 10.0);
-    mPidController->setPID(1.5, 0, 20.0);
+    mPidController->setPID(1.0, 0, 10.0);
 
     mBalancingWalker->setCommand(CONSTANT_FORWARD_VAL, direction);	//■■速度は暫定
     mBalancingWalker->run();
@@ -72,40 +71,6 @@ void LineTracer::run() {
 #if LOOKUPGATE_TEST_MODE
     mIsFinished = true;
 #endif
-
-#else
-
-#if 0
-    if( mSection == RunManager::STRAIGHT_ZONE){
-        mPidController->setPID(1.0, 0, 10.0);
-        mBalancingWalker->setCommand(100, direction);	//■■速度は暫定
-        mBalancingWalker->run();
-    }else if(mSection == RunManager::CURB_ZONE){
-        mPidController->setPID(1.5, 0 ,5);
-        mBalancingWalker->setCommand(70, direction);	//■■速度は暫定
-        mBalancingWalker->run();
-    }else if( mSection == RunManager::FINISHED){
-        mIsFinished = true;
-    	mLineMonitor->LineThresholdGray();
-        mBalancingWalker->setCommand(20, direction);	//■■速度は暫定
-        mBalancingWalker->run();
-    }else if( mSection == RunManager::GRAY){
-    //    while(1);
-        mBalancingWalker->setCommand(20, direction);	//■■速度は暫定
-        mBalancingWalker->run();
-    }
-#endif
-
-#endif
-
-    // アイデア②→LineTracer内でスタートから車庫まで（ソース管理が難しい?）
-    // }else if(mSection == RunManager::LOOKUPGATE){
-    //     // ルックアップゲート
-    // }else if(mSection == RunManager::STAIRS){
-    //     // 階段
-    // }else if(mSection == RunManager::GARAGE){
-    //     // 車庫入れ
-    // }
 }
 
 /**

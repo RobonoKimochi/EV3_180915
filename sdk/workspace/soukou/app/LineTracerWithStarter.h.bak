@@ -15,7 +15,7 @@
 
 #include "TailMotor.h"
 
-#include "Remote.h"
+//#include "Remote.h"
 #include "MeasureDistance.h"
 #include "LookUpGate.h"
 //#include "Garage.h"
@@ -28,7 +28,7 @@ public:
     LineTracerWithStarter(LineTracer* lineTracer,
                const Starter* starter,
                Calibration* calibration,
-              Remote*		   Remote,
+//               Remote*		   Remote,
                LookUpGate*     LookUpGate,
                MeasureDistance *measureDistance,
 //               Garage*         garage,
@@ -62,10 +62,10 @@ private:
     LineTracer* mLineTracer;
     const Starter* mStarter;
     Calibration* mCalibration;
-	Remote* mRemote;
+//	Remote* mRemote;
 	LookUpGate* mLookUpGate;// = new LookUpGate();
 	MeasureDistance* mMeasureDistance;// = new MeasureDistance();
-//	Garage* mGarage;
+	Garage* mGarage;
     BalancingWalker* mBalancingWalker;
 //    Run_Stairs* mRun_Stairs;
     Sound *mSound = Sound::getInstance();
